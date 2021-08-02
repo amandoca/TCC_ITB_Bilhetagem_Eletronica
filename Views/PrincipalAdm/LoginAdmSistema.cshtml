@@ -1,0 +1,76 @@
+﻿@model ProjetoTCC.Models.Cadastro_Adm
+@{
+    ViewBag.Title = "Login Adm Sistema";
+}
+@using (Html.BeginForm("LoginAdmSistema", "PrincipalAdm", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post,
+                                            new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken();
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <br />
+    <br />
+
+    <div class="col-lg-12 text-center">
+        <h2 class="glyphicon glyphicon-user section-heading text-uppercase">Login Administrador</h2>
+        <hr />
+    </div>
+    <img class="align-items-center" src="~/Imagens/LoginADM.png" alt="ADMLogin" width=130 height=130>
+    <div class="container-fluid">
+        <div class="form-login">
+            <div class="panel panel-default" col-lg-12">
+                <div class="panel-heading"></div>
+            </div>
+            <div style="padding-top:30px" class="panel-body center-block">
+                <div style="display:none" id="result" class="alert alert-danger col-sm-8"></div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-bottom: 25px" class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        @Html.EditorFor(model => model.Nome, new
+        {
+            htmlAttributes = new
+            {
+                @class = "form-control input-lg",
+                                                            placeholder = "Nome",
+                autofocus = true
+            }
+        })
+        @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+    </div>
+    <div style="margin-bottom: 25px" class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        @Html.EditorFor(model => model.Senha, new
+        {
+            htmlAttributes = new
+            {
+                @class = "form-control input-lg",
+                                                            placeholder = "Senha",
+                autofocus = true
+            }
+        })
+        @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+    </div>
+    <div style="margin-top:10px" class="form-group"></div>
+    <div class="col-lg-offset-4 controls"></div>
+    <td>
+        <input type="submit" value="Entrar" class="btn btn-success" />
+    </td>
+    <td></td>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <hr class="featurette-divider">
+    <p></p>
+    <p>    </p>
+    <p></p>
+    <p></p>
+    <p>    </p>
+    <p></p>
+
+}

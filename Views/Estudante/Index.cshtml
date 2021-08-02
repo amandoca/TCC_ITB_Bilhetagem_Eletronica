@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ProjetoTCC.Models.Estudante>
+
+@{
+    ViewBag.Title = "Solicitações - Cartão Escolar";
+Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Solicitações - Cartão Escolar</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome_Instituicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CEP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome_Aluno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_Nascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome_Instituicao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bairro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CEP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome_Aluno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_Nascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Detalhes", "Details", new { id = item.idFuncionario }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.idFuncionario })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<br />
+<a class="btn- btn-dark btn-lg" href="@Url.Action("Administrar", "AdmSistema")">
+    Voltar para painel administrador
+</a>

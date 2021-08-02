@@ -1,0 +1,42 @@
+﻿@model ProjetoTCC.Models.Cadastro_Adm
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Detalhes de Cadastro do Admininstrador - SISTEMA</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Viacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Viacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Senha)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idFuncionario }) |
+    @Html.ActionLink("Voltar para a lista", "Index")
+</p>

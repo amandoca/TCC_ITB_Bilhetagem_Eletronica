@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+    ViewBag.Title = "Administrador - EMPRESA";
+}
+
+<div class="col-lg-12 text-center">
+    <h2 class="glyphicon glyphicon-user section-heading text-uppercase"> Administrador - EMPRESA</h2>
+    <hr />
+</div>
+<h2>
+    Bem-vindo Administrador(a) @Session["empresaUsuarioLogado"]!
+</h2>
+
+
+<section class="page-section" id="adm">
+    <div class="container">
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="adm">
+                <img class="col-lg-12 glyphicon-align-center" src="~/Imagens/ADMempresa.png" alt="ADM" />
+                <a class="btn btn-primary btn-lg btn-block" href="@Url.Action("Create", "CadastroFuncionario")">
+                    Cadastrar Funcionário
+                </a>
+                <br /> <br /> <br />
+
+            </div>
+        </div>
+    </div>
+</section>

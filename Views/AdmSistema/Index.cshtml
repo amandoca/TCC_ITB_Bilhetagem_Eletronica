@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ProjetoTCC.Models.Cadastro_Adm>
+
+@{
+    ViewBag.Title = "Administradores do Sistema";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Administradores - SISTEMA</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar novo administrador", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Viacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Senha)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Viacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Senha)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.idFuncionario }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.idFuncionario }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.idFuncionario })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<br />
+<a class="btn- btn-dark btn-lg" href="@Url.Action("Administrar", "AdmSistema")">
+    Voltar para painel administrador
+</a>

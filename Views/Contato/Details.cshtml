@@ -1,0 +1,49 @@
+﻿@model ProjetoTCC.Models.Contato
+
+@{
+    ViewBag.Title = "Detalhes";
+Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensagem)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Voltar para a lista", "Index")
+</p>

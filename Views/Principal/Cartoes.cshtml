@@ -1,0 +1,335 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Cartões";
+}
+
+
+<head>
+
+    <title>Cartões</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="@Url.Content("~/Content/vendor/bootstrap/css/bootstrap.min.css")" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+
+    <link href="@Url.Content("~/Content/vendor/fontawesome-free/css/all.min.css")" rel="stylesheet">
+
+    <link href="@Url.Content("~/Content/vendor/fontawesome-free/css/brands.min.css")" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="@Url.Content("~/Content/css/agency.min.css")" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Cadê Meu Bilhete?</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item">
+                        @Html.ActionLink("Home", "Index", "Principal", new { area = "" }, new { @class = "nav-link js-scroll-trigger" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Cartões", "Cartoes", "Principal", new { area = "" }, new { @class = "nav-link js-scroll-trigger" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Contato", "Create", "Contato", new { area = "" }, new { @class = "nav-link js-scroll-trigger" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Cadastrar Empresa", "Create", "AdmEmpresa", new { area = "" }, new { @class = "nav-link js-scroll-trigger" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Login Empresa", "LoginEmpresa", "Principal", new { area = "" }, new { @class = "nav-link js-scroll-trigger" })
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Bem vindo ao nosso sistema de bilhetagem eletrônica!</div>
+            </div>
+        </div>
+    </header>
+    <!-- Portfolio Cartões Grid -->
+    <section class="bg-light page-section" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">CARTÕES</h2>
+                    <h3 class="section-subheading text-muted">Saiba um pouco mais sobre os cartões.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fas fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="~/Imagens/escolar_com_logo.png" alt="Escolar">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Escolar</h4>
+                        <p class="text-muted">Clique no cartão para mais informações e solicitar cartão escolar.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fas fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="~/Imagens/cidadao_com_logo.png" alt="Cidadão">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Cidadão</h4>
+                        <p class="text-muted">Clique no cartão para mais informações e solicitar cartão cidadão.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fas fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="~/Imagens/empresa_com_logo.png" alt="Empresa">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Empresa</h4>
+                        <p class="text-muted">Clique no cartão para mais informações e solicitar vale transporte para os funcionários de sua empresa.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fas fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="~/Imagens/especial_com_logo.png" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Especial</h4>
+                        <p class="text-muted">Clique no cartão para mais informações.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Modals -->
+    <!-- Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2 class="text-uppercase">ESCOLAR</h2>
+                                <p>Este cartão que concede o desconto de 50% no valor da tarifa. A recarga deverá ser feita na Bilheteria Benfácil.</p>
+                                <img class="img-fluid d-block mx-auto" src="~/Imagens/escolar_com_logo.png" alt="Escolar">
+
+                                <p>
+                                    <h2 class="text=danger text-center text-uppercase bg-info">
+                                        SOLICITE CARTÃO ESCOLAR
+                                    </h2>
+                                    <div>
+                                        <h3 class="mbr-section-subtitle align-right mbr-light mbr-white pb-3 mbr-fonts-style display-5">
+                                            Procedimento online: (Para solicitar Cartão Escolar) preencha o formulário no site, aguarde o retorno do contato através do email cadastrado e apresente na central Benfácil junto com os documentos abaixo descritos.
+                                        </h3>
+                                    </div><br>
+
+                                <p class="mbr-text align-right mbr-white mbr-fonts-style display-7">
+                                    <h3 class="text=danger text-center text-uppercase bg-info">
+                                        DOCUMENTOS
+                                    </h3>
+                                    <br>- Cópia do CPF;
+                                    <br>- Cópia do RG ou da certidão de nascimento;
+                                    <br>- Cópia comprovante de endereço atualizado (Constando nome do pai, mãe ou aluno (validade 60 dias);
+                                    <br>- Declaração escolar original (constando a série e o período), devidamente assinada pelo responsável pela escola (validade 30 dias após emissão);
+                                    <br>- Último boleto pago (mensalidade referente o mês corrente);
+                                    <br>- Foto 3x4 (carteira escolar);
+                                    <br>- Formulário de cadastro preenchido e no caso de aluno menor, assinado por responsável maior;
+                                    <br>- Último holerite do mês corrente (para professores)
+                                    <br>- Cartão Benfácil (caso seja renovação).
+                                    <br><strong>
+                                        DOCUMENTAÇÃO DEVE SER ENTREGUE NA CENTRAL BENFÁCIL
+                                    </strong><br><strong><br></strong><br>Prazo de entrega do cartão:
+                                    <br>7 dias úteis após a entrega da documentação.
+                                </p> <br /></p>
+                                <a class="btn btn-success btn-xl text-uppercase js-scroll-trigger" @Html.ActionLink("Solicite Agora", "Create", "Estudante", new { area = "" }, new { @class = "nav-link js-scroll-trigger" }) </a> <br /> <br>
+                                <button class="btn btn-danger" data-dismiss="modal" type="button">
+                                    <i class="danger"></i>
+                                    Fechar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2 class="text-uppercase">CIDADÃO</h2>
+                                <img class="img-fluid d-block mx-auto" src="~/Imagens/cidadao_com_logo.png" alt="Cidadão">
+                                <p>Solicitado por qualquer pessoa. Basta comparecer à Bilheteria Benfácil munido com cópias de RG, CPF e comprovante de endereço. Pode ser usado quantas vezes quiser, diversas vezes ao dia, desde que haja créditos de passagem. Adiante já a solicitação de seu cartão cidadão aqui!</p>
+                                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" @Html.ActionLink("Solicite Agora", "Create", "Cidadao", new { area = "" }, new { @class = "nav-link js-scroll-trigger" }) </a>
+                                <br />
+                                <br />
+                                <button class="btn btn-danger" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times"></i>
+                                    Fechar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2 class="text-uppercase">EMPRESA</h2>
+                                <img class="img-fluid d-block mx-auto" src="~/Imagens/empresa_com_logo.png" alt="">
+                                <p>As passagens se limitarão à quantidade de créditos concedidos pela empresa que disponibilizará este benefício a seus funcionários. A recarga também deverá ser feita mensalmente pela empresa, através da Central de Atendimento Benfácil ou VT-Online.</p>
+                                <p>Você é responsável pelo RH de sua empresa situada no município de <strong>Barueri/Itapevi/Jandira</strong> e deseja solicitar vale transporte para o novo funcionário? Cadastre sua empresa e solicite os vales transportes!</p>
+                                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" @Html.ActionLink("Cadastrar Empresa", "Create", "AdmEmpresa", new { area = "" }, new { @class = "nav-link js-scroll-trigger" }) </a>
+                                <br />
+                                <br />
+                                <button class="btn btn-danger" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times"></i>
+                                    Fechar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2 class="text-uppercase">Especial</h2>
+                                <img class="img-fluid d-block mx-auto" src="~/Imagens/especial_com_logo.png" alt="">
+                                <p>Os usuários deste benefício deverão comparecer ao Ganha Tempo – Setor de Perícias Médicas – Av Henriqueta Mendes Guerra, 550 Centro, Barueri-SP . Munidos de documentos : laudo médico do SUS com CID, RG ou CNH, se for acompanhante RG ou CNH e Comprovante de Residência (original) . Menores 18 anos Doc. originais acompanhados de responsável legal. Caso necessitar acompanhante é obrigatória presença do mesmo com RG original.</p>
+                                <button class="btn btn-danger" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times"></i>
+                                    Fechar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p></p>
+    <p>    </p>
+    <p></p>
+    <hr class="featurette-divider">
+    <p></p>
+    <p>    </p>
+    <p></p>
+    <p></p>
+    <p>    </p>
+    <p></p>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Cadê Meu Bilhete? &copy; @DateTime.Now.Year </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="@Url.Content("~/Content/vendor/jquery/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js")"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="@Url.Content("~/Content/vendor/jquery-easing/jquery.easing.min.js")"></script>
+
+
+    <!-- Contact form JavaScript -->
+    <script src="@Url.Content("~/Content/js/jqBootstrapValidation.js")"></script>
+    <script src="@Url.Content("~/Content/js/contact_me.js")"></script>
+
+
+    <!-- Custom scripts for this template -->
+    <script src="@Url.Content("~/Content/js/agency.min.js")"></script>
+
+
+</body>

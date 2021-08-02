@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Sucesso!";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <br />
+    <br />
+    <h3 class="text-center bg-success">Obrigado(a) pelo contato!</h3>
+    <br />
+    <br />
+    <br />
+    <a class="btn- btn-warning btn-lg" href="@Url.Action("Index", "Principal")">
+        Início
+    </a>
+
+}

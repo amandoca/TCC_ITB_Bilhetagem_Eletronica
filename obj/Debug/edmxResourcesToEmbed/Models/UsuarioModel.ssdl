@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="funcionarioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cadastro_Adm">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="10" />
+    <Property Name="Viacao" Type="varchar" MaxLength="10" />
+    <Property Name="Senha" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Cadastro_Cidadao">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CPF" Type="char" MaxLength="14" />
+    <Property Name="Nome" Type="varchar" MaxLength="64" />
+    <Property Name="RG" Type="char" MaxLength="12" />
+    <Property Name="Email" Type="varchar" MaxLength="64" />
+    <Property Name="Bairro" Type="varchar" MaxLength="64" />
+    <Property Name="Cidade" Type="varchar" MaxLength="64" />
+    <Property Name="Data_Nascimento" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Cadastro_Empresa">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Empresa" Type="varchar" MaxLength="64" />
+    <Property Name="CNPJ" Type="char" MaxLength="18" />
+    <Property Name="Telefone" Type="char" MaxLength="13" />
+    <Property Name="Email" Type="varchar" MaxLength="64" />
+    <Property Name="Endereco" Type="varchar" MaxLength="64" />
+    <Property Name="Bairro" Type="varchar" MaxLength="64" />
+    <Property Name="Numero" Type="char" MaxLength="6" />
+    <Property Name="CEP" Type="char" MaxLength="10" />
+    <Property Name="Cidade" Type="varchar" MaxLength="64" />
+    <Property Name="Senha" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Contato">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CPF" Type="char" MaxLength="14" />
+    <Property Name="Nome" Type="varchar" MaxLength="64" />
+    <Property Name="Email" Type="varchar" MaxLength="64" />
+    <Property Name="Mensagem" Type="varchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="Estudante">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome_Instituicao" Type="varchar" MaxLength="64" />
+    <Property Name="CPF" Type="char" MaxLength="15" />
+    <Property Name="Bairro" Type="varchar" MaxLength="64" />
+    <Property Name="Endereco" Type="varchar" MaxLength="64" />
+    <Property Name="Cidade" Type="varchar" MaxLength="64" />
+    <Property Name="CEP" Type="char" MaxLength="9" />
+    <Property Name="Nome_Aluno" Type="varchar" MaxLength="64" />
+    <Property Name="Data_Nascimento" Type="char" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="Funcionario_Empresa">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Empresa" Type="varchar" MaxLength="64" />
+    <Property Name="CPF" Type="char" MaxLength="14" />
+    <Property Name="Nome" Type="varchar" MaxLength="64" />
+    <Property Name="Data_Nascimento" Type="char" MaxLength="10" />
+    <Property Name="RG" Type="char" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="Login_Adm">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="10" />
+    <Property Name="Senha" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Login_Empresa">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Empresa" Type="varchar" MaxLength="64" />
+    <Property Name="Senha" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="funcionarioModelStoreContainer">
+    <EntitySet Name="Cadastro_Adm" EntityType="Self.Cadastro_Adm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cadastro_Cidadao" EntityType="Self.Cadastro_Cidadao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cadastro_Empresa" EntityType="Self.Cadastro_Empresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contato" EntityType="Self.Contato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estudante" EntityType="Self.Estudante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Funcionario_Empresa" EntityType="Self.Funcionario_Empresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login_Adm" EntityType="Self.Login_Adm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login_Empresa" EntityType="Self.Login_Empresa" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

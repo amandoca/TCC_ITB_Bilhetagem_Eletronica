@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="funcionarioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cadastro_Adm">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Viacao" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Senha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Cadastro_Cidadao">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CPF" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+    <Property Name="Nome" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="RG" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Bairro" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Cidade" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Data_Nascimento" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Cadastro_Empresa">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empresa" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="CNPJ" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+    <Property Name="Telefone" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Endereco" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Bairro" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Numero" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="CEP" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Cidade" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Senha" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Contato">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CPF" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+    <Property Name="Nome" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Mensagem" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Estudante">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome_Instituicao" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="CPF" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="Bairro" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Endereco" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Cidade" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="CEP" Type="String" MaxLength="9" FixedLength="true" Unicode="false" />
+    <Property Name="Nome_Aluno" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Data_Nascimento" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Funcionario_Empresa">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empresa" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="CPF" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+    <Property Name="Nome" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Data_Nascimento" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="RG" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Login_Adm">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Senha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Login_Empresa">
+    <Key>
+      <PropertyRef Name="idFuncionario" />
+    </Key>
+    <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empresa" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Senha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="funcionarioEntities4" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cadastro_Adm" EntityType="Self.Cadastro_Adm" />
+    <EntitySet Name="Cadastro_Cidadao" EntityType="Self.Cadastro_Cidadao" />
+    <EntitySet Name="Cadastro_Empresa" EntityType="Self.Cadastro_Empresa" />
+    <EntitySet Name="Contatoes" EntityType="Self.Contato" />
+    <EntitySet Name="Estudantes" EntityType="Self.Estudante" />
+    <EntitySet Name="Funcionario_Empresa" EntityType="Self.Funcionario_Empresa" />
+    <EntitySet Name="Login_Adm" EntityType="Self.Login_Adm" />
+    <EntitySet Name="Login_Empresa" EntityType="Self.Login_Empresa" />
+  </EntityContainer>
+</Schema>

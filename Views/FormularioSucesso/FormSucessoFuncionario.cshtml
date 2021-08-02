@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Sucesso!";
+Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <br />
+    <br />
+    <h3 class="text-center bg-success">Funcionário cadastrado com sucesso!</h3>
+    <br />
+    <br />
+    <br />
+    <a class="btn- btn-dark btn-lg" href="@Url.Action("Administrar", "AdmEmpresa")">
+        Voltar para painel administrador
+    </a>
+}

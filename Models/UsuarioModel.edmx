@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="funcionarioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cadastro_Adm">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="10" />
+          <Property Name="Viacao" Type="varchar" MaxLength="10" />
+          <Property Name="Senha" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Cadastro_Cidadao">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CPF" Type="char" MaxLength="14" />
+          <Property Name="Nome" Type="varchar" MaxLength="64" />
+          <Property Name="RG" Type="char" MaxLength="12" />
+          <Property Name="Email" Type="varchar" MaxLength="64" />
+          <Property Name="Bairro" Type="varchar" MaxLength="64" />
+          <Property Name="Cidade" Type="varchar" MaxLength="64" />
+          <Property Name="Data_Nascimento" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Cadastro_Empresa">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empresa" Type="varchar" MaxLength="64" />
+          <Property Name="CNPJ" Type="char" MaxLength="18" />
+          <Property Name="Telefone" Type="char" MaxLength="13" />
+          <Property Name="Email" Type="varchar" MaxLength="64" />
+          <Property Name="Endereco" Type="varchar" MaxLength="64" />
+          <Property Name="Bairro" Type="varchar" MaxLength="64" />
+          <Property Name="Numero" Type="char" MaxLength="6" />
+          <Property Name="CEP" Type="char" MaxLength="10" />
+          <Property Name="Cidade" Type="varchar" MaxLength="64" />
+          <Property Name="Senha" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Contato">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CPF" Type="char" MaxLength="14" />
+          <Property Name="Nome" Type="varchar" MaxLength="64" />
+          <Property Name="Email" Type="varchar" MaxLength="64" />
+          <Property Name="Mensagem" Type="varchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="Estudante">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome_Instituicao" Type="varchar" MaxLength="64" />
+          <Property Name="CPF" Type="char" MaxLength="15" />
+          <Property Name="Bairro" Type="varchar" MaxLength="64" />
+          <Property Name="Endereco" Type="varchar" MaxLength="64" />
+          <Property Name="Cidade" Type="varchar" MaxLength="64" />
+          <Property Name="CEP" Type="char" MaxLength="9" />
+          <Property Name="Nome_Aluno" Type="varchar" MaxLength="64" />
+          <Property Name="Data_Nascimento" Type="char" MaxLength="10" />
+          <Property Name="Email" Type="varchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Funcionario_Empresa">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empresa" Type="varchar" MaxLength="64" />
+          <Property Name="CPF" Type="char" MaxLength="14" />
+          <Property Name="Nome" Type="varchar" MaxLength="64" />
+          <Property Name="Data_Nascimento" Type="char" MaxLength="10" />
+          <Property Name="RG" Type="char" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="Login_Adm">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="10" />
+          <Property Name="Senha" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Login_Empresa">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empresa" Type="varchar" MaxLength="64" />
+          <Property Name="Senha" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="funcionarioModelStoreContainer">
+          <EntitySet Name="Cadastro_Adm" EntityType="Self.Cadastro_Adm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cadastro_Cidadao" EntityType="Self.Cadastro_Cidadao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cadastro_Empresa" EntityType="Self.Cadastro_Empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contato" EntityType="Self.Contato" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estudante" EntityType="Self.Estudante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Funcionario_Empresa" EntityType="Self.Funcionario_Empresa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login_Adm" EntityType="Self.Login_Adm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login_Empresa" EntityType="Self.Login_Empresa" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="funcionarioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cadastro_Adm">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Viacao" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Senha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Cadastro_Cidadao">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CPF" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Name="Nome" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="RG" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Bairro" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Cidade" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Data_Nascimento" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Cadastro_Empresa">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Empresa" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="CNPJ" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="Telefone" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Endereco" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Bairro" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Numero" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="CEP" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Cidade" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Senha" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Contato">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CPF" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Name="Nome" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Mensagem" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Estudante">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_Instituicao" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="CPF" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="Bairro" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Endereco" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Cidade" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="CEP" Type="String" MaxLength="9" FixedLength="true" Unicode="false" />
+          <Property Name="Nome_Aluno" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Data_Nascimento" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Funcionario_Empresa">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Empresa" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="CPF" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Name="Nome" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Data_Nascimento" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="RG" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Login_Adm">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Senha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Login_Empresa">
+          <Key>
+            <PropertyRef Name="idFuncionario" />
+          </Key>
+          <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Empresa" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Senha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="funcionarioEntities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cadastro_Adm" EntityType="Self.Cadastro_Adm" />
+          <EntitySet Name="Cadastro_Cidadao" EntityType="Self.Cadastro_Cidadao" />
+          <EntitySet Name="Cadastro_Empresa" EntityType="Self.Cadastro_Empresa" />
+          <EntitySet Name="Contatoes" EntityType="Self.Contato" />
+          <EntitySet Name="Estudantes" EntityType="Self.Estudante" />
+          <EntitySet Name="Funcionario_Empresa" EntityType="Self.Funcionario_Empresa" />
+          <EntitySet Name="Login_Adm" EntityType="Self.Login_Adm" />
+          <EntitySet Name="Login_Empresa" EntityType="Self.Login_Empresa" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="funcionarioModelStoreContainer" CdmEntityContainer="funcionarioEntities4">
+          <EntitySetMapping Name="Cadastro_Adm">
+            <EntityTypeMapping TypeName="funcionarioModel.Cadastro_Adm">
+              <MappingFragment StoreEntitySet="Cadastro_Adm">
+                <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Viacao" ColumnName="Viacao" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cadastro_Cidadao">
+            <EntityTypeMapping TypeName="funcionarioModel.Cadastro_Cidadao">
+              <MappingFragment StoreEntitySet="Cadastro_Cidadao">
+                <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="RG" ColumnName="RG" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Data_Nascimento" ColumnName="Data_Nascimento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cadastro_Empresa">
+            <EntityTypeMapping TypeName="funcionarioModel.Cadastro_Empresa">
+              <MappingFragment StoreEntitySet="Cadastro_Empresa">
+                <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contatoes">
+            <EntityTypeMapping TypeName="funcionarioModel.Contato">
+              <MappingFragment StoreEntitySet="Contato">
+                <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mensagem" ColumnName="Mensagem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estudantes">
+            <EntityTypeMapping TypeName="funcionarioModel.Estudante">
+              <MappingFragment StoreEntitySet="Estudante">
+                <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+                <ScalarProperty Name="Nome_Instituicao" ColumnName="Nome_Instituicao" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="Nome_Aluno" ColumnName="Nome_Aluno" />
+                <ScalarProperty Name="Data_Nascimento" ColumnName="Data_Nascimento" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Funcionario_Empresa">
+            <EntityTypeMapping TypeName="funcionarioModel.Funcionario_Empresa">
+              <MappingFragment StoreEntitySet="Funcionario_Empresa">
+                <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Data_Nascimento" ColumnName="Data_Nascimento" />
+                <ScalarProperty Name="RG" ColumnName="RG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login_Adm">
+            <EntityTypeMapping TypeName="funcionarioModel.Login_Adm">
+              <MappingFragment StoreEntitySet="Login_Adm">
+                <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login_Empresa">
+            <EntityTypeMapping TypeName="funcionarioModel.Login_Empresa">
+              <MappingFragment StoreEntitySet="Login_Empresa">
+                <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

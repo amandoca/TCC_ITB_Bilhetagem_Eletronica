@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProjetoTCC.Models.Contato>
+
+@{
+    ViewBag.Title = "Contatos enviados";
+Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Contatos enviados</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mensagem)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mensagem)
+            </td>
+            <td>
+                @Html.ActionLink("Detalhes", "Details", new { id = item.idFuncionario }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.idFuncionario })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<br />
+<a class="btn- btn-dark btn-lg" href="@Url.Action("Administrar", "AdmSistema")">
+    Voltar para painel administrador
+</a>
